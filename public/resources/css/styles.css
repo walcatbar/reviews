@@ -1,0 +1,123 @@
+/* 
+    Document   : styles
+    Created on : 06-Mar-2015, 20:13:11
+    Author     : walkyriabarbosa
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+body{
+    background: #FFFFCC;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.container{
+
+    background-color: #FFFFCC;
+}
+
+.main {
+    position: absolute;
+    left: 300px;
+    width: 600px;
+    top: 50px;
+    padding: 20px;
+    background-color: #C266E0;
+    border: transparent ;
+    border-color: #9900CC;
+    border-radius: 25px;
+}
+
+.title{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.name{
+    width: 300px;
+    text-align: right;
+    font-style: italic;
+}
+
+.reviews{
+
+}
+
+.form{
+    padding-top: 50px;
+    font-size: 12pt;
+}
+
+.stars{
+    font-size: 30pt;
+    color: #FFFF00;
+}
+
+.created{
+    font-style: italic;
+    width: 100px;
+    text-align: right;
+}
+
+.col1{
+    width: 350px;
+}
+
+.col2{
+    width: 100px;
+    text-align: right;
+}
+
+.text{
+    width: 70%;
+    
+}
+
+.comments{
+    
+    font-size: 12pt;
+}
+
+.message{
+    position: absolute;
+    font-style: italic;
+    font-size: 12pt;
+    left: 400px;
+    width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    top: 0px;
+    background-color: white;
+    text-align: center;
+    overflow-wrap: normal;
+    border-radius: 25px;
+}
+
+.errormsg{
+    color: red;
+}
+
+.button{
+    background-color: #6495ed;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 14pt;
+}
+
+.small{
+    
+    font-size: 8pt;
+}
+
+
+.formmessage{
+    font-style: italic;
+    font-size: 12pt;
+    color: red;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    text-align: center;
+    overflow-wrap: normal;
+}

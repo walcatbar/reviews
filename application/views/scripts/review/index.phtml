@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reviews</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../reviews/public/resources/css/styles.css" />
+    </head>
+    <body>
+            <?php if(isset($this->message)){?>
+                <div class="message">
+                <?php echo "<p>" . $this->message . "</p>"; ?>
+                </div>
+          <?php   } ?>
+        <div class="container-fluid main">
+            <div class="reviews">
+                    <?php if(isset($this->reviewsArray) && count($this->reviewsArray)>0){?>
+                        <?php foreach($this->reviewsArray as $review){ ?>
+                    <div class="row" >
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-6 stars"><?php echo str_repeat("*", $review["rate"]); ?></div>
+                    </div>
+                    <div class="row">
+                            <div class="col-sm-6 title"><?php echo $review["title"]; ?></div>
+                            <div class="col-sm-6"></div>
+                    </div>
+                    <div class="row">
+                            <div class="col-sm-6 comments"><?php echo $review["comments"]; ?></div>
+                            <div class="col-sm-6"></div>
+                    </div>
+                    <div class="row">
+                            <div class="col-sm-6 name"><?php echo $review["name"]; ?></div>
+                            <div class="col-sm-6 created"><?php echo date("d-m-Y",  strtotime($review["created"])); ?></div>
+                    </div>
+                        <?php }?>
+                     <?php }?>
+            </div>
+            <div class="form" >
+                <div class="formmessage">
+                    <?php if(isset($this->formmessage)){
+                        echo "<p>" . $this->formmessage . "</p>";
+                    } ?>
+                </div>
+                <form action="review/save" method="post">
+                    <h4>Write a review:</h4>
+                    <p class="small">(All fields are required)</p>
+                    <table>
+                        <tr>
+                            <td><label>Name:</label></td>
+                            <td><input class="text" name="name" type="text" autofocus/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email:</label></td>
+                            <td><input class="text" name="email" type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Title:</label></td>
+                            <td><input class="text" name="title" type="text"/></td>
+                        </tr>                        
+                        <tr>
+                            <td><label>Rating:</label></td>
+                            <td>
+                                <select name="rate">
+                                    <option value="5">5 - Very Good</option>
+                                    <option value="4">4 - Good</option>
+                                    <option value="3">3 - Average</option>
+                                    <option value="2">2 - Bad</option>
+                                    <option value="1">1 - Very Bad</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Comments:</label></td>
+                            <td><textarea name="comments" rows="5" cols="30"></textarea>
+                                <p class="small">(Please note that HTML tags will be removed)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="right"><input type="submit" id="save" class="btn btn-info btn-sm" value="Save"/></td>
+                        </tr>
+
+
+
+                    </table>
+
+
+                </form>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
